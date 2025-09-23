@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imobiliária - Casas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #0066cc;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .imoveis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform .2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .card .info {
+      padding: 10px;
+    }
+    .card .info h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .card .info p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 14px;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 6px;
+      max-width: 800px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
+    .modal-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .modal-images img {
+      width: calc(33% - 10px);
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    @media (max-width: 600px) {
+      .modal-images img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Imobiliária - Casas</h1>
+  <p>Clique nas casas para ver mais imagens</p>
+</header>
+
+<div class="container">
+  <div class="imoveis">
+    <div class="card" onclick="openModal('modal1')">
+        <img src="casa1.jpg" alt="Casa 1">
+         <div class="info">
+        <h3>Casa na árvore</h3>
+        <p>Uma enorme árvore mágica transformada em lar. Suas copas verdes caídas escondem varandas, pontes suspensas e pequenas construções de madeira. Lanternas pendem dos galhos e bandeiras tremulam no topo, criando um refúgio acolhedor e aventureiro em meio às colinas.</p>
+        <p> R$ 500.000</p>
+      </div>
+    </div>
+    <div class="card" onclick="openModal('modal2')">
+      <img src="casa2.jpg" alt="Casa 2">
+      <div class="info">
+        <h3>Reino gelado</h3>
+        <p>Um reino gelado com montanhas de cristal azul que perfuram as nuvens. No centro, uma montanha maior, em formato de pirâmide, domina a paisagem com um brilho gelado. O céu limpo e as nuvens suaves dão um toque de fantasia ao cenário.</p>
+        <p>R$ 650.000</p>
+      </div>
+    </div>
+    <div class="card" onclick="openModal('modal3')">
+      <img src="casa3.jpg" alt="Casa 3">
+      <div class="info">
+        <h3>Casa da marceline</h3>
+        <p>Um chalé pitoresco construído dentro de uma caverna gigantesca. A casa tem um deque de madeira que se estende sobre um lago subterrâneo, cercado por estalactites e estalagmites. Pela abertura da caverna, vê-se um pedaço do mundo exterior banhado pela luz.</p>
+        <p> R$ 750.000</p>
+      </div>
+    </div>
+    <div class="card" onclick="openModal('modal4')">
+      <img src="casa4.jpg" alt="Casa 4">
+      <div class="info">
+        <h3>Casa da dona trompa</h3>
+        <p>Uma casinha charmosa e colorida, com janelas redondas e detalhes cor-de-rosa, repousa entre árvores frutíferas. Ao lado, um banquinho e um vaso de flores completam o clima acolhedor e lúdico de um refúgio itinerante no meio do bosque.</p>
+        <p>R$ 300.000</p>
+      </div>
+    </div>
+    <div class="card" onclick="openModal('modal5')">
+      <img src="casa5.jpg" alt="Casa 5">
+      <div class="info">
+        <h3>Reino doce</h3>
+        <p>Um majestoso castelo dourado cercado por árvores que parecem algodão-doce rosa. Um arco-íris paira no céu, guiando visitantes por um caminho amarelo até o portão principal. O cenário inteiro exala magia, alegria e sabor de fantasia.</p>
+        <p> R$ 999999.000</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modais -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>Mais imagens</h2>
+    <div class="modal-images">
+      <img src="bc644d2d2077c793084953744693ecee.jpg">
+      <img src="06cf8f1fe3cae9ff5c8034a5d23d0315.jpg">
+    </div>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h2>Mais imagens</h2>
+    <div class="modal-images">
+      <img src="195497719c5aa077af845fef4d66fa2f.jpg">
+      <img src="e4fa32e101b7cb67a2d9e04ab761dd76.jpg">
+      <img src="577484c4cb04d7182a89b7f14c61dafc.jpg">
+    </div>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h2> Mais imagens</h2>
+    <div class="modal-images">
+      <img src="fd6bb00d94e3ddc1fbf5dcfc937a0897">
+      <img src="f8d43a412943f7c0e6687cc78cd290ff.jpg">
+    </div>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal4')">&times;</span>
+    <h2>Mais imagens</h2>
+    <div class="modal-images">
+      <img src="5b1541c5c5f6a87fd746bd0518087baa.jpg">
+    </div>
+  </div>
+</div>
+
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal5')">&times;</span>
+    <h2>Casa 5 - Mais imagens</h2>
+    <div class="modal-images">
+        <img src="ee2b79afacf6f2d7215fef9758c90487.jpg">
+        <img src="6790ff052bfd0c8a6a873f621c12d901.jpg">
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+  // fecha modal ao clicar fora
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(m=>{
+      if (event.target === m) m.style.display='none';
+    });
+  }
+</script>
+
+</body>
+</html>
